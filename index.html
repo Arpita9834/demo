@@ -1,62 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arpita Gaikwad | Cloud Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arpita | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script defer src="C:\Users\arpita\Downloads\Arpita_CloudPortfolio_Animated (1)\script.js"></script>
 </head>
 <body>
-  <header class="hero">
-    <div class="clouds"></div>
-    <div class="intro">
-      <h1>Hi, I’m <span>Arpita Gaikwad</span></h1>
-      <p>Cloud & AI Developer</p>
+  <header id="home">
+    <div class="hero-text">
+      <h1>Hi, I'm <span class="highlight">Arpita</span></h1>
+      <p class="typewriter">Frontend Developer | Cloud Enthusiast</p>
+      <a href="#projects" class="btn">View My Work</a>
     </div>
   </header>
 
-  <section id="skills" class="skills-section">
-    <h2>My Skills</h2>
-    <div class="skills-list">
-      <div>☁️ Cloud Computing</div>
-      <div>🛡️ Cybersecurity</div>
-      <div>🧠 AI & Chatbots</div>
-      <div>🐍 Python</div>
-      <div>🖥️ Web Development (HTML/CSS/JS)</div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate BCA student specializing in Cloud Computing and Cybersecurity.
+      I love building responsive websites and exploring new tech!
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">AWS Basics</div>
+      <div class="skill">Git & GitHub</div>
     </div>
   </section>
 
-  <section id="projects" class="projects-section">
-    <h2>My Projects</h2>
-    <div class="sticky-container">
-      <div class="sticky-note active">
-        <h3>Detecting Data Leaks</h3>
-        <p>Cloud system with AES-256 encryption and double-layer SQL injection protection.</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A modern personal website built with HTML, CSS, JS.</p>
+        <a href="www.google.com" class="btn-small">Live Demo</a>
       </div>
-      <div class="sticky-note">
-        <h3>Cloud-Based Bus Pass</h3>
-        <p>Online ticket system preventing ticket loss and ensuring smooth traffic via cloud scaling.</p>
-      </div>
-      <div class="sticky-note">
-        <h3>AI-Powered Chatbot</h3>
-        <p>Real-time interactive chatbot using retrieval/generative AI for websites.</p>
+      <div class="project-card">
+        <h3>Weather App</h3>
+        <p>Fetches real-time weather using API and JS.</p>
+        <a href="www.google.com" class="btn-small">View Project</a>
       </div>
     </div>
-    <button id="tearNote">Next Project</button>
   </section>
 
-  <section id="contact" class="contact-section">
+  <section id="contact">
     <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send</button>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
     </form>
   </section>
 
-  <script src="script.js"></script>
+  <footer>
+    <p>© 2025 Arpita. Made with 💙</p>
+  </footer>
 </body>
 </html>
