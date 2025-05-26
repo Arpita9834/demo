@@ -12,24 +12,40 @@
       color: #fff;
       overflow-x: hidden;
     }
-      
-      header {
-  background-image: url('cloud.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  animation: fadeIn 5s ease-in;
 
+    header {
+      background-image: url('cloud.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh; /* Increased height to show full image */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 5s ease-in;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4); /* Overlay to improve text readability */
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
       font-size: 3em;
       margin: 0;
+      color: black; /* Your name in black */
     }
 
     header p {
@@ -127,15 +143,11 @@
 </head>
 <body>
   <header>
-<style>
-      p {
-        color: black;
-      }
-    </style>
     <h1>Hi, I'm Arpita Gaikwad</h1>
     <p>Cloud & AI Developer</p>
   </header>
-<section style="margin:0 auto;width:60%;">
+
+  <section style="margin:0 auto;width:60%;">
     <h2>About Me</h2>
     <p> 
       I'm a passionate BCA student specializing in Cloud Computing and Cybersecurity.
