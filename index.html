@@ -2,221 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arpita Gaikwad | Cloud Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    header {
-      background-image: linear-gradient(to bottom, #0f2027, #203a43, #2c5364), url('cloud-removebg-preview.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      position: relative;
-      animation: fadeIn 5s ease-in;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.4); /* optional: dark overlay for text readability */
-      z-index: 0;
-    }
-
-    header h1, header p {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      color: black;
-    }
-
-    header p {
-      font-size: 1.5em;
-      color: #ccc;
-    }
-
-    section {
-      padding: 60px 20px;
-    }
-
-    .skills, .contact {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .skills h2, .projects h2, .contact h2, .about h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .skill-list {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-
-    .skill {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px 25px;
-      margin: 10px;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-
-    .skill:hover {
-      transform: scale(1.1);
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .project-board {
-      position: relative;
-      max-width: 600px;
-      margin: auto;
-      background: #fff8dc;
-      color: #000;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      font-family: 'Courier New', Courier, monospace;
-    }
-
-    .tear-button {
-      display: block;
-      margin: 30px auto 0;
-      padding: 10px 20px;
-      background: #444;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    input[type="submit"] {
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .tear-effect {
-      animation: tear 1s forwards;
-    }
-
-    @keyframes tear {
-      0% { transform: rotate(0deg); opacity: 1; }
-      100% { transform: rotate(-15deg) translateY(100vh); opacity: 0; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arpita Gaikwad Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Hi, I'm Arpita Gaikwad</h1>
-    <p>Cloud & AI Developer</p>
-  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Arpita Gaikwad</h1>
+      <p>Cloud & AI Developer</p>
+    </div>
+  </section>
 
-  <section class="about" style="margin:0 auto;width:60%;">
+  <section class="about">
     <h2>About Me</h2>
-    <p>
-      I'm a passionate BCA student specializing in Cloud Computing and Cybersecurity.
-      I love building responsive websites and exploring new tech!
-    </p>
+    <p>I'm a passionate BCA student specializing in Cloud Computing and Cybersecurity. I love building responsive websites and exploring new tech!</p>
   </section>
 
   <section class="skills">
     <h2>My Skills</h2>
     <div class="skill-list">
-      <div class="skill">Cloud Computing</div>
-      <div class="skill">Cybersecurity</div>
-      <div class="skill">AI & Chatbots</div>
-      <div class="skill">Python</div>
-      <div class="skill">Web Development (HTML/CSS/JS)</div>
+      <span>Cloud Computing</span>
+      <span>Cybersecurity</span>
+      <span>AI & Chatbots</span>
+      <span>Python</span>
     </div>
   </section>
 
   <section class="projects">
     <h2>My Projects</h2>
-    <div class="project-board" id="projectBoard">
-      <h3 id="projectTitle">Detecting Data Leaks</h3>
-      <p id="projectDesc">Cloud system with AES-256 encryption and double-layer SQL injection protection.</p>
+    <div class="project-list">
+      <div class="project">
+        <h3>Data Redundancy Removal System</h3>
+        <p>A cloud-based tool that removes redundant data, maintains accuracy, and manages smart databases.</p>
+      </div>
+      <div class="project">
+        <h3>SQL Injection Leak Detection</h3>
+        <p>Secure system with AES-256 encryption and double-layer SQL injection protection to avoid data leaks.</p>
+      </div>
+      <div class="project">
+        <h3>Cloud-Based Bus Pass System</h3>
+        <p>Scalable cloud system for booking bus passes online and dynamically managing user load.</p>
+      </div>
+      <div class="project">
+        <h3>AI-Powered Chatbot</h3>
+        <p>Website-integrated chatbot using generative and retrieval AI for real-time support and interaction.</p>
+      </div>
     </div>
-    <button class="tear-button" onclick="nextProject()">Next Project</button>
   </section>
-
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <input type="submit" value="Send" />
-    </form>
-  </section>
-
-  <script>
-    const projects = [
-      {
-        title: "Detecting Data Leaks",
-        desc: "Cloud system with AES-256 encryption and double-layer SQL injection protection."
-      },
-      {
-        title: "Cloud-Based Bus Pass",
-        desc: "Online ticket system preventing ticket loss and ensuring smooth traffic via cloud scaling."
-      },
-      {
-        title: "AI-Powered Chatbot",
-        desc: "Real-time interactive chatbot using retrieval/generative AI for websites."
-      }
-    ];
-
-    let currentProject = 0;
-    const board = document.getElementById("projectBoard");
-    const title = document.getElementById("projectTitle");
-    const desc = document.getElementById("projectDesc");
-
-    function nextProject() {
-      board.classList.add("tear-effect");
-      setTimeout(() => {
-        currentProject = (currentProject + 1) % projects.length;
-        title.textContent = projects[currentProject].title;
-        desc.textContent = projects[currentProject].desc;
-        board.classList.remove("tear-effect");
-      }, 1000);
-    }
-  </script>
 </body>
 </html>
