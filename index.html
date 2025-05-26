@@ -3,67 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arpita | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="C:\Users\arpita\Downloads\Arpita_CloudPortfolio_Animated (1)\script.js"></script>
+  <title>Arpita Gaikwad | Cloud Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      background: url('https://i.imgur.com/VtH9knU.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.5em;
+      color: #ccc;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .skills, .contact {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .skills h2, .projects h2, .contact h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .skill-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px 25px;
+      margin: 10px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .project-board {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+      background: #fff8dc;
+      color: #000;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .tear-button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 20px;
+      background: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tear-effect {
+      animation: tear 1s forwards;
+    }
+
+    @keyframes tear {
+      0% { transform: rotate(0deg); opacity: 1; }
+      100% { transform: rotate(-15deg) translateY(100vh); opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-  <header id="home">
-    <div class="hero-text">
-      <h1>Hi, I'm <span class="highlight">Arpita</span></h1>
-      <p class="typewriter">Frontend Developer | Cloud Enthusiast</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
+  <header>
+    <h1>Hi, I'm Arpita Gaikwad</h1>
+    <p>Cloud & AI Developer</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate BCA student specializing in Cloud Computing and Cybersecurity.
-      I love building responsive websites and exploring new tech!
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
+  <section class="skills">
+    <h2>My Skills</h2>
+    <div class="skill-list">
+      <div class="skill">Cloud Computing</div>
+      <div class="skill">Cybersecurity</div>
+      <div class="skill">AI & Chatbots</div>
       <div class="skill">Python</div>
-      <div class="skill">AWS Basics</div>
-      <div class="skill">Git & GitHub</div>
+      <div class="skill">Web Development (HTML/CSS/JS)</div>
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>A modern personal website built with HTML, CSS, JS.</p>
-        <a href="www.google.com" class="btn-small">Live Demo</a>
-      </div>
-      <div class="project-card">
-        <h3>Weather App</h3>
-        <p>Fetches real-time weather using API and JS.</p>
-        <a href="www.google.com" class="btn-small">View Project</a>
-      </div>
+  <section class="projects">
+    <h2>My Projects</h2>
+    <div class="project-board" id="projectBoard">
+      <h3 id="projectTitle">Detecting Data Leaks</h3>
+      <p id="projectDesc">Cloud system with AES-256 encryption and double-layer SQL injection protection.</p>
     </div>
+    <button class="tear-button" onclick="nextProject()">Next Project</button>
   </section>
 
-  <section id="contact">
+  <section class="contact">
     <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send</button>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <input type="submit" value="Send" />
     </form>
   </section>
 
-  <footer>
-    <p>© 2025 Arpita. Made with 💙</p>
-  </footer>
+  <script>
+    const projects = [
+      {
+        title: "Detecting Data Leaks",
+        desc: "Cloud system with AES-256 encryption and double-layer SQL injection protection."
+      },
+      {
+        title: "Cloud-Based Bus Pass",
+        desc: "Online ticket system preventing ticket loss and ensuring smooth traffic via cloud scaling."
+      },
+      {
+        title: "AI-Powered Chatbot",
+        desc: "Real-time interactive chatbot using retrieval/generative AI for websites."
+      }
+    ];
+
+    let currentProject = 0;
+    const board = document.getElementById("projectBoard");
+    const title = document.getElementById("projectTitle");
+    const desc = document.getElementById("projectDesc");
+
+    function nextProject() {
+      board.classList.add("tear-effect");
+      setTimeout(() => {
+        currentProject = (currentProject + 1) % projects.length;
+        title.textContent = projects[currentProject].title;
+        desc.textContent = projects[currentProject].desc;
+        board.classList.remove("tear-effect");
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
