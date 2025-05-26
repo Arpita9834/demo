@@ -14,10 +14,11 @@
     }
 
     header {
-      background-image: url('cloud-removebg-preview.png');
+      background-image: linear-gradient(to bottom, #0f2027, #203a43, #2c5364), url('cloud-removebg-preview.png');
       background-size: cover;
       background-position: center;
-      height: 100vh; /* Increased height to show full image */
+      background-repeat: no-repeat;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -34,7 +35,8 @@
       bottom: 0;
       right: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.4); /* Overlay to improve text readability */
+      background-color: rgba(0, 0, 0, 0.4); /* optional: dark overlay for text readability */
+      z-index: 0;
     }
 
     header h1, header p {
@@ -45,7 +47,7 @@
     header h1 {
       font-size: 3em;
       margin: 0;
-      color: black; /* Your name in black */
+      color: black;
     }
 
     header p {
@@ -62,7 +64,7 @@
       margin: auto;
     }
 
-    .skills h2, .projects h2, .contact h2 {
+    .skills h2, .projects h2, .contact h2, .about h2 {
       text-align: center;
       margin-bottom: 40px;
     }
@@ -147,14 +149,14 @@
     <p>Cloud & AI Developer</p>
   </header>
 
-  <section style="margin:0 auto;width:60%;">
+  <section class="about" style="margin:0 auto;width:60%;">
     <h2>About Me</h2>
-    <p> 
+    <p>
       I'm a passionate BCA student specializing in Cloud Computing and Cybersecurity.
       I love building responsive websites and exploring new tech!
     </p>
   </section>
-  
+
   <section class="skills">
     <h2>My Skills</h2>
     <div class="skill-list">
